@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 
 # Import the class before loading the model
-from Shopping_Deals_Recommeneder.train_collaborative import CollaborativeRecommender
+from train_collaborative import CollaborativeRecommender
+
 
 
 # Load trained models
