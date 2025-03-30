@@ -4,6 +4,12 @@ import numpy as np
 import pandas as pd
 
 # Import the class before loading the model
+import sys
+import os
+
+# Ensure the current directory is in the Python path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from train_collaborative import CollaborativeRecommender
 
 
