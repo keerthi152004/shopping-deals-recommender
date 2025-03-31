@@ -2,23 +2,22 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
-
-# Import the class before loading the model
 import sys
 import os
 
-# Ensure the current directory is in the Python path
+# Ensure the script directory is in Python's path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# Import CollaborativeRecommender
 from train_collaborative import CollaborativeRecommender
 
-
-
 # Load trained models
-kmeans_model = joblib.load("kmeans_model.pkl")
-collaborative_model = joblib.load("collaborative_model.pkl")  # Now it recognizes the class
+base_path = os.path.dirname(os.path.abspath(__file__))
+kmeans_model = joblib.load(os.path.join(base_path, "kmeans_model.pkl"))
+collaborative_model = joblib.load(os.path.join(base_path, "collaborative_model.pkl"))
 
-product_mapping = pd.read_csv("products.csv").set_index("item_id")["product_name"].to_dict()
+product_mapping = pd.read_csv(os.path.join(base_path, "products.csv")).set_index("item_id")["product_name"].to_dict()
+
 # Streamlit UI
 st.title("AI-Based Personalized Shopping Deals Recommender")
 
@@ -45,8 +44,6 @@ user_id = st.number_input("Enter User ID for Recommendations", min_value=1, valu
 
 if st.button("Get Recommendations"):
     recommended_items = collaborative_model.get_recommendations(user_id)
-    
-    # Convert item IDs to product names
     recommended_products = [product_mapping.get(item_id, f"Item {item_id}") for item_id in recommended_items]
     
     st.write("### Recommended Deals:")

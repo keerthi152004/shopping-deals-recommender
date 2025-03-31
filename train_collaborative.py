@@ -4,8 +4,15 @@ import re  # For regex extraction
 from surprise import SVD, Dataset, Reader
 
 # Define file paths
-file_path = "C:/Users/keert/OneDrive/Desktop/Shopping_Deals_Recommeneder/dataset/user_item_ratings.csv"
-model_path = "C:/Users/keert/OneDrive/Desktop/Shopping_Deals_Recommeneder/collaborative_model.pkl"
+import os
+
+# Get the base directory dynamically
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Use relative paths
+file_path = os.path.join(base_path, "dataset", "user_item_ratings.csv")
+model_path = os.path.join(base_path, "collaborative_model.pkl")
+
 
 try:
     # Load dataset
