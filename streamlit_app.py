@@ -14,8 +14,11 @@ from train_collaborative import CollaborativeRecommender
 # Load trained models
 base_path = os.path.dirname(os.path.abspath(__file__))
 kmeans_model = joblib.load(os.path.join(base_path, "kmeans_model.pkl"))
-collaborative_model = joblib.load(os.path.join(base_path, "collaborative_model.pkl"))
 
+# ✅ Load the correct instance of CollaborativeRecommender
+collaborative_recommender = joblib.load(os.path.join(base_path, "collaborative_model.pkl"))
+
+# Load product mapping
 product_mapping = pd.read_csv(os.path.join(base_path, "products.csv")).set_index("item_id")["product_name"].to_dict()
 
 # Streamlit UI
@@ -43,9 +46,9 @@ if st.button("Predict Customer Segment"):
 user_id = st.number_input("Enter User ID for Recommendations", min_value=1, value=102)
 
 if st.button("Get Recommendations"):
-    recommended_items = collaborative_model.get_recommendations(user_id)
+    recommended_items = collaborative_recommender.get_recommendations(user_id)  # ✅ FIXED: Use correct instance
     recommended_products = [product_mapping.get(item_id, f"Item {item_id}") for item_id in recommended_items]
-    
+
     st.write("### Recommended Deals:")
     for product in recommended_products:
         st.write(f"- {product}")

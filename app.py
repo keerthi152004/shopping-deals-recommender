@@ -1,7 +1,7 @@
 import joblib
 import pandas as pd
 from flask import Flask, request, jsonify
-from recommender import CollaborativeRecommender  # Import the class
+from train_collaborative import CollaborativeRecommender  # Import the class
 
 # Initialize Flask app
 app = Flask(__name__)
