@@ -75,7 +75,7 @@ You can access the deployed app here:
 Want to improve this project? Feel free to fork the repo, make changes, and submit a pull request!
 
 ## 💎 Contact
-For any questions or feedback, reach out at **creativeexplorer15@gmail.com**
+For any questions or feedback, reach out at **keerthiannamareddy@gmail.com**
 
 ---
 **Keerthi A.**
