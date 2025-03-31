@@ -2,8 +2,6 @@ import joblib
 import pandas as pd
 import re  # For regex extraction
 from surprise import SVD, Dataset, Reader
-
-# Define file paths
 import os
 
 # Get the base directory dynamically
@@ -13,11 +11,10 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(base_path, "dataset", "user_item_ratings.csv")
 model_path = os.path.join(base_path, "collaborative_model.pkl")
 
-
 try:
     # Load dataset
     df = pd.read_csv(file_path)
-    print(" Dataset loaded successfully.")
+    print("Dataset loaded successfully.")
 
     # Validate necessary columns
     required_columns = {'user_id', 'item_id', 'rating'}
@@ -27,7 +24,7 @@ try:
     # Convert user_id to integer
     df['user_id'] = pd.to_numeric(df['user_id'], errors='coerce')
     
-    # ✅ Extract numeric part from 'item_id' and convert to integer
+    # Extract numeric part from 'item_id' and convert to integer
     df['item_id'] = df['item_id'].apply(lambda x: int(re.search(r'\d+', str(x)).group()) if pd.notna(x) else None)
     
     # Handle missing values after conversions
@@ -40,11 +37,11 @@ try:
     data = Dataset.load_from_df(df[['user_id', 'item_id', 'rating']], reader)
 
     # Train the SVD model
-    print(" Training collaborative filtering model...")
+    print("Training collaborative filtering model...")
     trainset = data.build_full_trainset()
     model = SVD()
     model.fit(trainset)
-    print(" Model training complete.")
+    print("Model training complete.")
 
     # Define recommender class
     class CollaborativeRecommender:
@@ -52,6 +49,8 @@ try:
             self.model = model
 
         def get_recommendations(self, user_id, num_recommendations=5):
+            if user_id not in df['user_id'].values:
+                return []  # Return empty if user ID is invalid
             all_items = df['item_id'].unique()
             predictions = [(item, self.model.predict(user_id, item).est) for item in all_items]
             predictions.sort(key=lambda x: x[1], reverse=True)
@@ -63,4 +62,4 @@ try:
     print(f"Model saved successfully at {model_path}")
 
 except Exception as e:
-    print(f"Error: {e}")
+    print(f"Error: {e}") 

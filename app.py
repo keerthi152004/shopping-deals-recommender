@@ -1,7 +1,6 @@
 import joblib
 import pandas as pd
 from flask import Flask, request, jsonify
-from train_collaborative import CollaborativeRecommender  # Import the class
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -12,7 +11,7 @@ try:
     collab_model = joblib.load("collaborative_model.pkl")  # Load collaborative model
 
     # Ensure the loaded model is an instance of CollaborativeRecommender
-    if not isinstance(collab_model, CollaborativeRecommender):
+    if not hasattr(collab_model, 'get_recommendations'):
         raise TypeError("collaborative_model.pkl is not an instance of CollaborativeRecommender!")
 
 except FileNotFoundError as e:
@@ -46,6 +45,13 @@ def recommend():
 
         # Get recommendations from collaborative filtering model
         recommended_deals = collab_model.get_recommendations(data["customer_id"])
+        
+        # Handle empty recommendations
+        if not recommended_deals:
+            return jsonify({
+                "customer_segment": int(segment),
+                "recommended_deals": "No recommendations available for this user."
+            })
 
         return jsonify({
             "customer_segment": int(segment),
