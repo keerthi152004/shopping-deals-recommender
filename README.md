@@ -3,7 +3,7 @@
 ## 🚀 Project Overview
 This project is an **AI-based shopping deals recommender system** that suggests personalized deals to customers based on their past purchases, spending behavior, and customer segmentation. The system leverages **machine learning** techniques such as **K-Means clustering** for customer segmentation and **Collaborative Filtering (SVD)** for recommendation generation.
 
-## 📂 Dataset Details
+## 📚 Dataset Details
 The dataset used in this project contains:
 - **User transaction data** (Total Spend, Items Purchased, Membership Type, etc.)
 - **Product details** (Item ID, Product Name, Category, etc.)
@@ -62,7 +62,7 @@ The app will open in your browser at `http://localhost:8501/`.
 
 ## 🚀 Live Deployment
 You can access the deployed app here:  
-🔗 **[Live Streamlit App](https://your-streamlit-app-url.streamlit.app/)**  
+🔗 **[Live Streamlit App](https://keerthi152004-shopping-deals.streamlit.app/)**  
 
 ## 🛠 Technologies Used
 - **Python** (Pandas, NumPy, Scikit-learn, Surprise, Joblib)
@@ -74,9 +74,9 @@ You can access the deployed app here:
 ## 🤝 Contributing
 Want to improve this project? Feel free to fork the repo, make changes, and submit a pull request!
 
-## 📧 Contact
-For any questions or feedback, reach out at **keerthiannamareddy@gmail.com**
+## 💎 Contact
+For any questions or feedback, reach out at **creativeexplorer15@gmail.com**
 
-
+---
 **Keerthi A.**
 
