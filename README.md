@@ -1,82 +1,114 @@
-# AI-Based Personalized Shopping Deals Recommender
+# 🛍️ AI-Based Personalized Shopping Deals Recommender
 
 ## 🚀 Project Overview
-This project is an **AI-based shopping deals recommender system** that suggests personalized deals to customers based on their past purchases, spending behavior, and customer segmentation. The system leverages **machine learning** techniques such as **K-Means clustering** for customer segmentation and **Collaborative Filtering (SVD)** for recommendation generation.
+This project is an AI-powered recommender system that provides **personalized shopping deals** based on customer behavior, purchase history, and customer segmentation. It leverages machine learning techniques like **K-Means clustering** and **Collaborative Filtering (SVD)** to offer relevant product suggestions to users.
+
+---
 
 ## 📚 Dataset Details
-The dataset used in this project contains:
-- **User transaction data** (Total Spend, Items Purchased, Membership Type, etc.)
-- **Product details** (Item ID, Product Name, Category, etc.)
-- **Ratings and Reviews** provided by users
 
-### 📌 Data Preprocessing
-- Removed unnecessary columns
-- Handled missing values
-- Converted categorical variables into numerical form
-- Normalized numerical features for better model performance
+The dataset includes:
+- 🧾 User transaction data (Total Spend, Items Purchased, Membership Type, etc.)
+- 📦 Product details (Item ID, Product Name, Category, etc.)
+- 🌟 Ratings and Reviews provided by users
+
+---
+
+## 📌 Data Preprocessing
+- Removed unnecessary columns  
+- Handled missing values  
+- Encoded categorical variables  
+- Normalized numerical features for improved model performance  
+
+---
 
 ## 🔍 Methodology
 
-### **PHASE 1: Data Understanding & Cleaning**
-✔ Loaded and inspected the dataset  
-✔ Cleaned missing values and removed duplicates  
-✔ Conducted **Exploratory Data Analysis (EDA)** to identify shopping patterns  
+### ✅ PHASE 1: Data Understanding & Cleaning
+- Loaded and explored the dataset
+- Removed duplicates and handled missing values
+- Conducted Exploratory Data Analysis (EDA) to reveal shopping behavior and trends
 
-### **PHASE 2: Building the Recommender System**
-✔ Used **K-Means clustering** to segment customers  
-✔ Built a **Collaborative Filtering model (SVD)** to generate personalized recommendations  
-✔ Trained the model and saved it using **joblib**  
+### ✅ PHASE 2: Building the Recommender System
+- Applied **K-Means clustering** to group similar users
+- Built a **Collaborative Filtering** model using **SVD**
+- Trained and saved the model with `joblib`
 
-### **PHASE 3: Developing the Web Application**
-✔ Created a **Streamlit-based frontend** for user interaction  
-✔ Built backend logic to fetch customer segment & recommendations  
-✔ Integrated **Flask API** to serve recommendations  
+### ✅ PHASE 3: Developing the Web Application
+- Designed an interactive **Streamlit UI**
+- Implemented backend logic to fetch segment-based recommendations
+- Integrated with a **Flask API** for serving recommendation results
 
-### **PHASE 4: Deployment & Documentation**
-✔ Deployed the **Streamlit app on Streamlit Cloud**  
-✔ Created this **README file for documentation**  
-
-## 🖥 How to Run Locally
-### **Prerequisites**
-Make sure you have the following installed:
-- Python 3.x
-- Required Python libraries (install using the command below)
-
-```bash
-pip install -r requirements.txt
-```
-
-### **Run the Application**
-1. Clone the repository:
-```bash
-git clone https://github.com/keerthi152004/shopping-deals-recommender.git
-cd shopping-deals-recommender
-```
-
-2. Run the Streamlit app:
-```bash
-streamlit run streamlit_app.py
-```
-
-The app will open in your browser at `http://localhost:8501/`.
-
-## 🚀 Live Deployment
-You can access the deployed app here:  
-🔗 **[Live Streamlit App](https://shopping-deals-recommender-nao7dolye9q2tzvrjohpbx.streamlit.app/)**  
-
-## 🛠 Technologies Used
-- **Python** (Pandas, NumPy, Scikit-learn, Surprise, Joblib)
-- **Machine Learning** (K-Means Clustering, SVD Collaborative Filtering)
-- **Streamlit** (For building the UI)
-- **Flask** (For backend API)
-- **Streamlit Cloud** (For deployment)
-
-## 🤝 Contributing
-Want to improve this project? Feel free to fork the repo, make changes, and submit a pull request!
-
-## 💎 Contact
-For any questions or feedback, reach out at **keerthiannamareddy@gmail.com**
+### ✅ PHASE 4: Deployment & Documentation
+- Deployed the Streamlit app to **Streamlit Cloud**
+- Wrote this comprehensive documentation (`README.md`)
 
 ---
-**Keerthi A.**
+
+## 📊 Model Evaluation
+
+Performance metrics for the recommender system:
+
+- **Average RMSE**: `0.2903`  
+- **Average MAE**: `0.2234`
+
+These metrics indicate that the model makes relatively accurate recommendations.
+
+---
+
+## ❤️ User Feedback Mechanism
+
+A **like/dislike** system has been introduced to allow users to provide feedback on recommended products. This lays the foundation for future improvements, such as **real-time learning** from user interactions.
+
+**Current Feedback State Example:**
+```json
+[
+  {
+    "user_id": "102",
+    "item_id": "Item_275_12",
+    "type": "like"
+  },
+  {
+    "user_id": "102",
+    "item_id": "Item_352_7",
+    "type": "dislike"
+  }
+]
+
+🖥 How to Run Locally
+🔧 Prerequisites
+Python 3.x
+
+Install dependencies:
+
+bash
+pip install -r requirements.txt
+▶️ Run the App
+bash
+git clone https://github.com/keerthi152004/shopping-deals-recommender.git
+cd shopping-deals-recommender
+streamlit run streamlit_app.py
+The app will open in your browser at: http://localhost:8501/
+
+🚀 Live Deployment
+🔗 Click Here to Access the Deployed App
+
+
+🛠 Technologies Used
+Python (Pandas, NumPy, Scikit-learn, Surprise, Joblib)
+
+Machine Learning (K-Means Clustering, SVD)
+
+Streamlit (Frontend)
+
+Flask (API)
+
+Streamlit Cloud (Deployment)
+
+🤝 Contributing
+Want to improve this project? Fork the repo, make changes, and submit a pull request!
+
+💎 Contact
+📧 Email: keerthiannamareddy@gmail.com
+👤 Author: Keerthi A.
 
