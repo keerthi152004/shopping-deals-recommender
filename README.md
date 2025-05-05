@@ -62,7 +62,7 @@ The app will open in your browser at `http://localhost:8501/`.
 
 ## 🚀 Live Deployment
 You can access the deployed app here:  
-🔗 **[Live Streamlit App](https://shopping-deals-recommender-cw2murdu6lcenvrwzlm9dr.streamlit.app/)**  
+🔗 **[Live Streamlit App](https://shopping-deals-recommender-nao7dolye9q2tzvrjohpbx.streamlit.app/)**  
 
 ## 🛠 Technologies Used
 - **Python** (Pandas, NumPy, Scikit-learn, Surprise, Joblib)
