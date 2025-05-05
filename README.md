@@ -105,10 +105,15 @@ The app will open in your browser at: http://localhost:8501
 
 ## 🛠 Technologies Used
 Python: Pandas, NumPy, Scikit-learn, Surprise, Joblib
+
 Machine Learning: K-Means Clustering, SVD Collaborative Filtering
+
 Streamlit: Frontend UI
+
 Flask: API layer for recommendations
+
 Streamlit Cloud: App Deployment Platform
+
 
 ---
 
