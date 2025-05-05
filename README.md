@@ -74,6 +74,8 @@ A **like/dislike** system has been introduced to allow users to provide feedback
     "type": "dislike"
   }
 ]
+```
+
 ## 🖥 How to Run Locally
 
 ### 🔧 Prerequisites
@@ -82,32 +84,43 @@ A **like/dislike** system has been introduced to allow users to provide feedback
 ### 📦 Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+---
 
 ## ▶️ Run the App
+```bash
 git clone https://github.com/keerthi152004/shopping-deals-recommender.git
 cd shopping-deals-recommender
 streamlit run streamlit_app.py
+```
 The app will open in your browser at: http://localhost:8501
-🚀 Live Deployment
-🔗 Click Here to Access the Deployed App
 
-🛠 Technologies Used
+---
+
+## 🚀 Live Deployment
+🔗 [Click Here to Access the Deployed App](https://shopping-deals-recommender-nao7dolye9q2tzvrjohpbx.streamlit.app/)
+
+---
+
+## 🛠 Technologies Used
 Python: Pandas, NumPy, Scikit-learn, Surprise, Joblib
-
 Machine Learning: K-Means Clustering, SVD Collaborative Filtering
-
 Streamlit: Frontend UI
-
 Flask: API layer for recommendations
-
 Streamlit Cloud: App Deployment Platform
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
 Want to improve this project?
 Fork the repo, make your changes, and submit a pull request! Contributions are welcome.
 
-💎 Contact
+---
+
+### 💎 Contact
 📧 Email: keerthiannamareddy@gmail.com
+
 
 👤 Author: Keerthi A.
 
